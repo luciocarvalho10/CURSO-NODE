@@ -7,5 +7,14 @@ const { Person } = require('./Person')
 const person = new Person('Lucio')
 
 const node = require('./modules')
-node.path
+
+// referente a path.js
+// node.path.arquivoAtual()
+// node.path.arquivoAtualDiretorio()
+// node.path.arquivoAtualExtensao()
+// node.path.arquivoAtualInformacao()
+// node.path.arquivoAtualJuntarCaminho('test')
+
+// node.fs.criarPasta('test')
 // node.fs.criarArquivo('test', 'teste.txt', 'Hello World!')
+node.fs.inserirTexto('test', 'teste.txt', ' e Hello Node!')
