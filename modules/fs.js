@@ -7,13 +7,18 @@ const criarPasta = pasta =>
   fs.mkdir(path.join(__dirname, pasta), e => msg.errSucc(e, 'Pasta Criada'))
 
   // Criar arquivo
-const criarArquivo = (pasta, arquivo, texto) =>
-  fs.writeFile(path.join(__dirname, `/${pasta}`, arquivo), texto, e =>
+const criarArquivo = (caminho, arquivo, texto) =>
+  fs.writeFile(path.join(__dirname, `/${caminho}`, arquivo), texto, e =>
     msg.errSucc(e, 'Arquivo criado'))
 
 
-const inserirTexto = (pasta, arquivo, texto) =>
-  fs.appendFile(path.join(__dirname, `/${pasta}`, arquivo), texto, e =>
+const inserirTexto = (caminho, arquivo, texto) =>
+  fs.appendFile(path.join(__dirname, `/${caminho}`, arquivo), texto, e =>
     msg.errSucc(e, 'Arquivo modificado'))
 
-module.exports = { criarPasta, criarArquivo, inserirTexto }
+
+const lerArquivo = (caminho, arquivo, formato) =>
+ fs.readFile(path.join(__dirname, `/${caminho}`, arquivo), formato, (e, data) =>
+  msg.errSucc(e, data))
+
+module.exports = { criarPasta, criarArquivo, inserirTexto, lerArquivo }

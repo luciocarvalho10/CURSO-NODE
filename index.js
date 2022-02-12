@@ -17,4 +17,5 @@ const node = require('./modules')
 
 // node.fs.criarPasta('test')
 // node.fs.criarArquivo('test', 'teste.txt', 'Hello World!')
-node.fs.inserirTexto('test', 'teste.txt', ' e Hello Node!')
+// node.fs.inserirTexto('test', 'teste.txt', ' e Hello Node!')
+// node.fs.lerArquivo('test', 'teste.txt', 'utf8')
