@@ -1,12 +1,15 @@
-// Importa e executa o o que está dentro do modulo
-require('./modules/path')
-require('./modules/fs')
+// Importa e executa o que está dentro do modulo
+// require('./modules/path')
+// require('./modules/fs')
+// require('./modules/http')
 
+// Apenas importa
 const { Person } = require('./Person')
+const node = require('./modules')
 
 const person = new Person('Lucio')
 
-const node = require('./modules')
+node.http
 
 // referente a path.js
 // node.path.arquivoAtual()
