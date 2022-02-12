@@ -3,7 +3,12 @@ const path = require('path')
 const msg = require('./msg')
 
 // Criar pasta
-const criarPasta = () =>
-  fs.mkdir(path.join(__dirname, '/test'), e => msg.errSucc(e, 'Pasta Criada'))
+const criarPasta = pasta =>
+  fs.mkdir(path.join(__dirname, pasta), e => msg.errSucc(e, 'Pasta Criada'))
 
-module.exports = { criarPasta }
+// Criar arquivo
+const criarArquivo = (pasta, arquivo, texto) =>
+  fs.writeFile(path.join(__dirname, `/${pasta}`, arquivo), texto, e =>
+    msg.errSucc(e, 'Arquivo criado'))
+
+module.exports = { criarPasta, criarArquivo }
