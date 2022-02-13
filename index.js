@@ -1,3 +1,5 @@
+const dotenv = require('dotenv')
+dotenv.config()
 // Importa e executa o que está dentro do modulo
 // require('./modules/path')
 // require('./modules/fs')
