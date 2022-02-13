@@ -2,14 +2,15 @@
 // require('./modules/path')
 // require('./modules/fs')
 // require('./modules/http')
+// require('./modules/express')
 
 // Apenas importa
-const { Person } = require('./Person')
+// const { Person } = require('./Person')
+// const person = new Person('Lucio')
+
 const node = require('./modules')
-
-const person = new Person('Lucio')
-
-node.http
+// node.http()
+node.express()
 
 // referente a path.js
 // node.path.arquivoAtual()
