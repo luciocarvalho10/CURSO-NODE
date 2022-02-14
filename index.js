@@ -1,5 +1,15 @@
 const dotenv = require('dotenv')
+
+const connectDatabase = require('./src/database/connect')
+
 dotenv.config()
+
+connectDatabase()
+
+// const node = require('./modules')
+// node.http()
+// node.express()
+
 // Importa e executa o que está dentro do modulo
 // require('./modules/path')
 // require('./modules/fs')
@@ -9,10 +19,6 @@ dotenv.config()
 // Apenas importa
 // const { Person } = require('./Person')
 // const person = new Person('Lucio')
-
-const node = require('./modules')
-// node.http()
-node.express()
 
 // referente a path.js
 // node.path.arquivoAtual()
