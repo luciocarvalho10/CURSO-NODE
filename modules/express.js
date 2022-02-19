@@ -7,19 +7,22 @@ const app = express()
 
 app.use(express.json())
 
+// pegar todos os usuarios
 app.get('/users', async (req, res) => {
-  try {
-    res.status(200).json(await UserModel.find({}))
-  } catch (error) {
-    res.status(500).send(error.message)
-  }
+  try { res.status(200).json(await UserModel.find({})) }
+  catch (error) { res.status(500).send(error.message) }
 })
 
+// pegar os usuarios por id
+app.get('/users/:id', async (req, res) => {
+  try { res.status(200).json(await UserModel.findById(req.params.id)) }
+  catch (error) { res.status(500).send(error.message) }
+})
+
+// criar usuarios
 app.post('/users', async (req,res) => {
-    try {
-      res.status(201).json(await UserModel.create(req.body))
-    } catch (error) {
-      res.status(500).send(error.message)
-  }})
+    try { res.status(201).json(await UserModel.create(req.body)) }
+    catch (error) { res.status(500).send(error.message) }
+})
 
 app.listen(port, () => msg.succ(`Rodando na porta ${port}`))
